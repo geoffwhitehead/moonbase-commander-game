@@ -1,62 +1,40 @@
-# Lightweight OpenGL 2D Game Engine
+# Moonbase Commander Game
 
-A lightweight game engine i created in OpenGL. It uses the NCLGL framework, JsonCPP, Klang Audio, and Box2d.
+A clone made of the 2002 game "Moonbase Commander" by developer "Humongous Entertainment". Created to demo the openGL engine i developed.
 
 ## Getting Started
 
-Clone and run the engine with Visual Studio. It contains a copy of the moonbase commander strategy game i created to demo the engine. Check the game/ folder to get an idea of how to use the engine.
+Clone and run with visual studio.
 
-### Installing
+## Instructions
 
-To create a game you will need to extend the engine base classes in order to use their functionality.
-Inlude the following base classes and then instantiate them in the main class for your game:
+Turn based strategy game for 2 players.
 
-```
-#include "../engine-base/Camera.h"
-#include "../engine-base/GameManager.h"
-#include "../engine-audio/AudioManager.h"
-#include "../engine-input/InputManager.h"
-#include "../engine-base/GameLogicManager.h"
-#include "../engine-physics/PhysicsManager.h"
-```
+Objective: Destroy all of opponents Nodes (hubs).
 
-These are known as system "system managers". Each "system manager" can have "sub systems" which you can register with it. Sub systems must use the base class SubSystem and can contain all your game code.
+Starting resource: 7
 
-```
-First initiate the system Manager.
-GameManager *gm = new GameManager(W_X, W_Y); // provide the screen size X and Y
-```
-You can then instantiate all the other system managers shown above.
-eg.
+Rules:
+* The console screen will output damage details and costs for selected options.
+* Fire a resource node onto a resource patch to increase resource gain per turn.
+* Firing a Hub or weapon costs resource.
+* Connection nodes cannot cross. Newer node is detroyed when this happens.
+* Connections cannot be damaged.
+* Only basic hubs can spawn new nodes (Hubs) or fire projectiles.
+* All hubs of one team be connected.
 
-```
-GameLogicManager* glm = new GameLogicManager();
-```
-Then add the instantiated systemManagers to the game manager
-```
-gm->addSystemManager(glm);
-```
-
-Excluding the gameManager, each manager contains a function called addSubSystem(). You can create game classes that have "SubSytem" as their base class and then register them with the manager using the addSubSystem() method. By doing this, your game classes will be called once per frame.
-```
-class GameLogic :
-	public SubSystem
-```
-You will have to create certain methods such as init() when you do this.
-
-Then instantiate and register your created game classes to its manager. eg.
-
-```
-GameLogic* gl = new GameLogic(gm, glm, pm->b2_world, am, camera); // in this case (shown in the game demo) my GameLogic class requires a reference to the GameManager, GameLogicManager, the box2d world, AudioManager, and the camera instance.
-
-glm->addSubSystem(gl);
-```
-
-Call GameManager()->run() to start the game.
-
-```
-gm->run();
-```
+Controls:
+Direction arrows  : Firing arch
+Spacebar (hold)   : Fire a projectile. Distance based on time held.
+Enter             : End turn
+Tab               : Show help / controls
+Num1              : Weapon: Bomb
+Num2              : Weapon: Cluster Bomb
+Num3              : Weapon: Surge Bomb
+Num4              : Weapon: Hub
+Num5              : Weapon: Resource Hub
+Num6              : Weapon: Shield Hub
+Num7              : Weapon: Heal Tool
 
 ## Built With
 
