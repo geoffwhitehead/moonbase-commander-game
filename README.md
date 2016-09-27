@@ -21,7 +21,7 @@ Rules:
 * Connection nodes cannot cross. Newer node is detroyed when this happens.
 * Connections cannot be damaged.
 * Only basic hubs can spawn new nodes (Hubs) or fire projectiles.
-* All hubs of one team be connected.
+* All hubs of one team must be connected - isolated hubs will be destroyed.
 
 Controls:
 * Direction arrows  : Firing arch
