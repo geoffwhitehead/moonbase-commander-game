@@ -24,17 +24,17 @@ Rules:
 * All hubs of one team be connected.
 
 Controls:
-Direction arrows  : Firing arch
-Spacebar (hold)   : Fire a projectile. Distance based on time held.
-Enter             : End turn
-Tab               : Show help / controls
-Num1              : Weapon: Bomb
-Num2              : Weapon: Cluster Bomb
-Num3              : Weapon: Surge Bomb
-Num4              : Weapon: Hub
-Num5              : Weapon: Resource Hub
-Num6              : Weapon: Shield Hub
-Num7              : Weapon: Heal Tool
+* Direction arrows  : Firing arch
+* Spacebar (hold)   : Fire a projectile. Distance based on time held.
+* Enter             : End turn
+* Tab               : Show help / controls
+* Num1              : Weapon: Bomb
+* Num2              : Weapon: Cluster Bomb
+* Num3              : Weapon: Surge Bomb
+* Num4              : Weapon: Hub
+* Num5              : Weapon: Resource Hub
+* Num6              : Weapon: Shield Hub
+* Num7              : Weapon: Heal Tool
 
 ## Built With
 
